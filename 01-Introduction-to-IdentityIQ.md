@@ -7,15 +7,11 @@
 ## Table of Contents
 
 1.  [Introduction to IdentityIQ](#1-introduction-to-identityiq)
-2.  [Why Organizations Use
-    IdentityIQ](#2-why-organizations-use-identityiq)
+2.  [Why Organizations Use IdentityIQ](#2-why-organizations-use-identityiq)
 3.  [Core IdentityIQ Modules](#3-core-identityiq-modules)
-4.  [The Governance Framework Behind Access
-    Decisions](#4-the-governance-framework-behind-access-decisions)
-5.  [A Governed Access Request: End-to-End
-    Example](#5-a-governed-access-request-end-to-end-example)
-6.  [How Lifecycle Manager and Compliance Manager Work
-    Together](#6-how-lifecycle-manager-and-compliance-manager-work-together)
+4.  [The Governance Framework Behind Access Decisions](#4-the-governance-framework-behind-access-decisions)
+5.  [A Governed Access Request: End-to-End Example](#5-a-governed-access-request-end-to-end-example)
+6.  [How Lifecycle Manager and Compliance Manager Work Together](#6-how-lifecycle-manager-and-compliance-manager-work-together)
 7.  [Other SailPoint Solutions](#7-other-sailpoint-solutions)
 8.  [IdentityIQ Deployment Models](#8-identityiq-deployment-models)
 9.  [Important Terminology](#9-important-terminology)
@@ -40,29 +36,19 @@ governance over identity and access information.
 
 It helps organizations answer five fundamental questions:
 
-  -----------------------------------------------------------------------
-  Question                            What it means
-  ----------------------------------- -----------------------------------
-  Who has access?                     Which users have accounts across
-                                      organizational systems?
-
-  What access do they have?           Which roles, permissions, and
-                                      entitlements are assigned?
-
-  Should they have that access?       Does their access match their job
-                                      responsibilities and organizational
-                                      policies?
-
-  What happens when their role        Should their existing access be
-  changes?                            modified, added, or removed?
-
-  Can the organization verify access? Can managers and auditors review
-                                      and validate access decisions?
-  -----------------------------------------------------------------------
+| Question | What it means |
+|---|---|
+| Who has access? | Which users have accounts across organizational systems? |
+| What access do they have? | Which roles, permissions, and entitlements are assigned? |
+| Should they have that access? | Does their access match their job responsibilities and organizational policies? |
+| What happens when their role changes? | Should their existing access be modified, added, or removed? |
+| Can the organization verify access? | Can managers and auditors review and validate access decisions? |
 
 The central objective of identity governance is to ensure that the right
 people have the right access to the right resources at the right time,
 supported by appropriate authorization, controls, and evidence.
+
+------------------------------------------------------------------------
 
 ## 2. Why Organizations Use IdentityIQ
 
@@ -152,33 +138,14 @@ Lifecycle Manager focuses on managing access throughout an identity's
 lifecycle. It supports access requests, approvals, provisioning,
 modifications, and removal of access.
 
-  -----------------------------------------------------------------------
-  Capability                          Description
-  ----------------------------------- -----------------------------------
-  Access requests                     Allows users to request access to
-                                      applications, roles, or
-                                      permissions.
-
-  Approval workflows                  Routes requests to managers,
-                                      application owners, or other
-                                      designated approvers according to
-                                      the configured workflow.
-
-  Provisioning                        Creates accounts or assigns access
-                                      in connected applications, where
-                                      the required integration is
-                                      configured.
-
-  Deprovisioning                      Removes accounts or access when
-                                      they are no longer required.
-
-  Lifecycle events                    Supports access changes when
-                                      employees join, move between roles,
-                                      or leave.
-
-  Batch updates                       Applies access changes to multiple
-                                      users.
-  -----------------------------------------------------------------------
+| Capability | Description |
+|---|---|
+| Access requests | Allows users to request access to applications, roles, or permissions. |
+| Approval workflows | Routes requests to managers, application owners, or other designated approvers according to the configured workflow. |
+| Provisioning | Creates accounts or assigns access in connected applications, where the required integration is configured. |
+| Deprovisioning | Removes accounts or access when they are no longer required. |
+| Lifecycle events | Supports access changes when employees join, move between roles, or leave. |
+| Batch updates | Applies access changes to multiple users. |
 
 #### Example: A new employee requests ERP access
 
@@ -220,23 +187,12 @@ configured.
 
 ### 3.3 Lifecycle Manager vs. Compliance Manager
 
-  -----------------------------------------------------------------------
-  Area                    Lifecycle Manager       Compliance Manager
-  ----------------------- ----------------------- -----------------------
-  Primary purpose         Manage access changes   Govern and review
-                                                  access
-
-  Main activities         Requests, approvals,    Certifications, policy
-                          provisioning, lifecycle evaluation, violation
-                          changes                 detection
-
-  Main question           How should access be    Is the access held by
-                          requested and assigned? the user appropriate?
-
-  Example                 Granting ERP access to  Reviewing ERP access
-                          a new employee          held by existing
-                                                  employees
-  -----------------------------------------------------------------------
+| Area | Lifecycle Manager (LCM) | Compliance Manager | How they complement each other |
+|---|---|---|---|
+| Primary purpose | Manage access changes | Govern and review access | LCM executes access changes; Compliance Manager reviews whether those changes remain appropriate |
+| Key capabilities | Access requests, approvals, provisioning, deprovisioning, lifecycle events, batch updates | Access certifications, policy scanning and violation detection | Compliance Manager findings can trigger LCM-driven access changes such as revocation or remediation |
+| Main question | How should access be requested and assigned? | Is the access held by the user appropriate? | Together they cover both the granting and the ongoing review of access |
+| Example | Granting ERP access to a new employee | Reviewing ERP access held by existing employees | LCM handles onboarding access; Compliance Manager periodically confirms that access is still needed |
 
 A useful distinction: **Lifecycle Manager helps manage access changes;
 Compliance Manager helps assess and govern access.** Their capabilities
@@ -272,53 +228,15 @@ framework. They are useful reference artifacts for understanding the
 information and decisions that may sit behind an enterprise access
 request.
 
-  -----------------------------------------------------------------------
-  Governance reference    What it defines         How it relates to
-                                                  IdentityIQ
-  ----------------------- ----------------------- -----------------------
-  Access Control Policy   Organization-wide       Provides the governing
-                          principles and          requirements that can
-                          requirements for        be translated into
-                          granting, reviewing,    IdentityIQ roles,
-                          changing, and removing  policies, workflows,
-                          access.                 and operational
-                                                  controls.
-
-  RBAC Matrix             Which business or       Can inform IdentityIQ
-                          technical roles should  role design, role
-                          receive which access.   assignments, and
-                                                  role-based access
-                                                  provisioning.
-
-  Entitlement Catalogue   Available application   Helps organize and
-                          permissions, their      interpret application
-                          meaning, ownership, and entitlements aggregated
-                          risk or sensitivity.    or managed in
-                                                  IdentityIQ.
-
-  Approval Matrix         Who is authorized to    Informs approval
-                          approve different       routing and workflow
-                          categories of access.   configuration.
-
-  SoD Policy and Rules    Which combinations of   Informs policy
-  Register                access or               definitions, SoD rules,
-                          responsibilities create violation evaluation,
-                          conflicts, and how      and remediation
-                          conflicts should be     processes.
-                          handled.                
-
-  Provisioning and        Operational steps,      LCM workflows and
-  Deprovisioning SOP      checks, evidence, and   target application
-                          closure requirements    integrations can
-                          for access changes.     automate or support
-                                                  relevant process steps.
-
-  Exception Management    How policy conflicts,   Informs configured
-  SOP                     failed requests, urgent exception, approval,
-                          access, and exceptions  remediation, and
-                          are assessed, approved, escalation processes.
-                          tracked, and closed.    
-  -----------------------------------------------------------------------
+| Governance reference | What it defines | Why it matters | How it may inform IdentityIQ |
+|---|---|---|---|
+| Access Control Policy | Organization-wide principles and requirements for granting, reviewing, changing, and removing access. | Sets the governing rules that all access decisions should follow. | Provides the governing requirements that can be translated into IdentityIQ roles, policies, workflows, and operational controls. |
+| RBAC Matrix | Which business or technical roles should receive which access. | Maps roles to access so assignments are consistent and auditable. | Can inform IdentityIQ role design, role assignments, and role-based access provisioning. |
+| Entitlement Catalogue | Available application permissions, their meaning, ownership, and risk or sensitivity. | Makes individual entitlements visible and understandable to reviewers and approvers. | Helps organize and interpret application entitlements aggregated or managed in IdentityIQ. |
+| Approval Matrix | Who is authorized to approve different categories of access. | Ensures access requests go to the right decision-makers. | Informs approval routing and workflow configuration. |
+| SoD Policy and Rules Register | Which combinations of access or responsibilities create conflicts, and how conflicts should be handled. | Prevents or detects incompatible access combinations held by one person. | Informs policy definitions, SoD rules, violation evaluation, and remediation processes. |
+| Provisioning and Deprovisioning SOP | Operational steps, checks, evidence, and closure requirements for access changes. | Standardises how access is fulfilled, verified, and closed. | LCM workflows and target application integrations can automate or support relevant process steps. |
+| Exception Management SOP | How policy conflicts, failed requests, urgent access, and exceptions are assessed, approved, tracked, and closed. | Ensures deviations from policy are controlled, not informal bypasses. | Informs configured violation handling, remediation, and escalation processes. |
 
 **What about ABAC?**
 
@@ -330,41 +248,44 @@ depending on the design and version. Do not assume that a separate ABAC
 spreadsheet is automatically imported or that every ABAC model is
 available out of the box.
 
+**Important:** The linked IdentityGuard documentation pack described in
+the Practical Governance References section includes an RBAC Matrix but
+does **not** include a separate ABAC matrix. ABAC is discussed here as
+a related access-control model, not as a document in the linked pack.
+
 ### 4.2 These documents are not the same thing
 
 It is useful to separate four layers:
 
-  -----------------------------------------------------------------------
-  Layer                   Purpose                 Example
-  ----------------------- ----------------------- -----------------------
-  Policy                  Defines what must or    Users must not hold
-                          must not happen.        conflicting Finance
-                                                  entitlements.
-
-  Reference data          Defines the roles,      RBAC matrix,
-                          permissions, owners,    entitlement catalogue,
-                          and approval            approval matrix.
-                          relationships used to   
-                          make decisions.         
-
-  Platform configuration  Implements selected     IdentityIQ roles,
-                          requirements in a       policy rules, approval
-                          system.                 workflows, application
-                                                  integrations.
-
-  Operating procedure     Explains how people     Provisioning SOP,
-                          perform and evidence    exception management
-                          the process.            SOP.
-  -----------------------------------------------------------------------
+| Layer | Purpose | Example |
+|---|---|---|
+| Policy | Defines what must or must not happen. | Users must not hold conflicting Finance entitlements. |
+| Reference data | Defines the roles, permissions, owners, and approval relationships used to make decisions. | RBAC matrix, entitlement catalogue, approval matrix. |
+| Platform configuration | Implements selected requirements in a system. | IdentityIQ roles, policy rules, approval workflows, application integrations. |
+| Operating procedure | Explains how people perform and evidence the process. | Provisioning SOP, exception management SOP. |
 
 A policy document or spreadsheet does not become an IdentityIQ control
 merely because it exists. The relevant requirements must be assessed,
 translated into suitable configuration, tested, and maintained.
 
+IdentityIQ does not automatically ingest every organizational policy,
+spreadsheet, matrix, SOP, or approval document and convert it into
+enforceable controls. These requirements need to be translated into an
+appropriate implementation and configuration.
+
 ### 4.3 Does manager approval alone authorize provisioning?
 
 **Not necessarily.** Manager approval is one input to an authorization
 process, not universal proof that a request is permissible.
+
+Access decisions may depend on:
+
+-   The organization's access control policy.
+-   Role and entitlement definitions.
+-   Approval requirements.
+-   Segregation of Duties rules.
+-   Other configured policies and controls.
+-   Exception handling requirements.
 
 Consider a request for a financial application entitlement:
 
@@ -406,26 +327,19 @@ rules can inform those policy definitions.
 
 Two useful control categories are:
 
-  -----------------------------------------------------------------------
-  Control type            Purpose                 Example
-  ----------------------- ----------------------- -----------------------
-  Preventive              Identify or stop        Evaluate a requested
-                          problematic access      entitlement for an SoD
-                          before it is            conflict during an
-                          provisioned.            access request
-                                                  workflow.
-
-  Detective               Identify a conflict in  Evaluate existing
-                          access that a user      identities and
-                          already holds.          entitlements to find an
-                                                  SoD violation.
-  -----------------------------------------------------------------------
+| Control type | Purpose | Example |
+|---|---|---|
+| Preventive | Identify or stop problematic access before it is provisioned. | Evaluate a requested entitlement for an SoD conflict during an access request workflow. |
+| Detective | Identify a conflict in access that a user already holds. | Evaluate existing identities and entitlements to find an SoD violation. |
 
 A detected violation does not necessarily mean that every IdentityIQ
 deployment will automatically reject the request. The configured policy
 and workflow determine the response. Depending on the design, the
 request may be blocked, held for review, routed for remediation, or
 considered through an authorized exception process.
+
+A detected violation may require investigation, remediation, or an
+approved exception, depending on organizational policy.
 
 ### 4.5 What happens when a policy exception is needed?
 
@@ -446,7 +360,8 @@ An exception process may require:
 IdentityIQ can support parts of policy-violation handling and configured
 workflows. The full exception-management procedure, including
 responsibilities and evidence requirements, remains an organizational
-governance process.
+governance process. Requirements vary by organization; not every
+organization uses identical exception requirements.
 
 ### 4.6 What IdentityIQ does not do automatically
 
@@ -476,12 +391,12 @@ selected parts of that framework.
 **Scenario:** A Finance employee requests an entitlement in an ERP
 application.
 
-The diagram below illustrates a logical governance process. It is not a
-universal, fixed IdentityIQ workflow. Actual policy-check placement,
-approval routing, exception handling, and provisioning integrations
-depend on the organization's configuration.
+The diagram below illustrates a logical governance process. It is a
+conceptual example and is not a universal, fixed IdentityIQ workflow.
+Actual policy-check placement, approval routing, exception handling, and
+provisioning integrations depend on the organization's configuration.
 
-``` mermaid
+```mermaid
 flowchart TD
     A["Employee submits access request"] --> B["Identify requested application, role, or entitlement"]
     B --> C["Check access model and entitlement reference"]
@@ -559,7 +474,7 @@ itself remains an organizational operating document.
 Lifecycle Manager and Compliance Manager use identity and access
 information for complementary purposes.
 
-``` mermaid
+```mermaid
 flowchart TD
     A["Identity and application access data"] --> B["IdentityIQ"]
     B --> C["Lifecycle Manager"]
@@ -583,6 +498,13 @@ flowchart TD
 -   Certification and policy findings can lead to remediation, which may
     involve access removal or another controlled change through the
     appropriate process.
+
+LCM supports access requests, approvals, provisioning, and lifecycle
+changes. Compliance Manager supports certifications, policy scanning,
+and violation detection. Governance findings may lead to remediation or
+access changes. The diagram illustrates how the two modules complement
+one another; it does not imply that one module automatically performs
+every task of the other.
 
 The introductory course describes Lifecycle Manager and Compliance
 Manager as sharing application access data in the IdentityIQ database,
@@ -623,9 +545,9 @@ appropriate.
 AI-Driven Identity Security uses machine learning and data intelligence
 to help organizations discover, manage, and control access-related data.
 
-According to the introductory material, File Access Manager and
-AI-Driven Identity Security are separate solutions that can integrate
-with IdentityIQ. They have their own data storage, user interfaces, and
+File Access Manager and AI-Driven Identity Security are separate SailPoint
+solutions that can integrate with IdentityIQ. They are not IdentityIQ
+modules. They have their own data storage, user interfaces, and
 implementation processes.
 
 They are not simply additional modules sharing the same IdentityIQ
@@ -662,79 +584,37 @@ environment. This model can suit organizations that want IdentityIQ
 capabilities but do not have sufficient in-house resources to operate
 the environment.
 
-  -----------------------------------------------------------------------
-  Deployment model        Infrastructure          IdentityIQ management
-                          management              
-  ----------------------- ----------------------- -----------------------
-  On-premises             Organization            Organization
+| Deployment model | Infrastructure management | IdentityIQ management |
+|---|---|---|
+| On-premises | Organization | Organization |
+| Public cloud | Organization, using a cloud provider's infrastructure | Organization |
+| Cloud managed service | Managed service provider | Managed service provider |
 
-  Public cloud            Organization, using a   Organization
-                          cloud provider's        
-                          infrastructure          
-
-  Cloud managed service   Managed service         Managed service
-                          provider                provider
-  -----------------------------------------------------------------------
+Availability of specific deployment options may depend on the IdentityIQ
+version and offering. Where product terminology or availability is
+version-dependent, consult the documentation for your IdentityIQ
+version.
 
 ------------------------------------------------------------------------
 
 ## 9. Important Terminology
 
-  -----------------------------------------------------------------------
-  Term                                Meaning
-  ----------------------------------- -----------------------------------
-  Identity                            A representation of a person or
-                                      other entity whose access is
-                                      managed.
-
-  Account                             A user's account within a
-                                      particular application or system.
-
-  Entitlement                         A specific permission or access
-                                      right within a system.
-
-  Provisioning                        Creating an account or assigning
-                                      access.
-
-  Deprovisioning                      Removing an account or access.
-
-  Access certification                A formal review of existing access
-                                      to determine whether it should
-                                      remain.
-
-  Policy violation                    A condition in which access
-                                      conflicts with an established
-                                      organizational policy.
-
-  Target application                  An application or system to which
-                                      IdentityIQ manages or governs
-                                      access.
-
-  RBAC                                Role-Based Access Control: access
-                                      is assigned through defined roles.
-
-  ABAC                                Attribute-Based Access Control:
-                                      access decisions use defined
-                                      attributes and conditions.
-
-  SoD                                 Segregation of Duties: a control
-                                      principle that prevents conflicting
-                                      responsibilities from being
-                                      assigned to the same person.
-
-  Exception                           A formally reviewed and authorized
-                                      deviation from a defined policy or
-                                      control requirement.
-
-  Compensating control                An alternative control used to
-                                      reduce risk when the standard
-                                      control cannot be followed.
-
-  SOP                                 Standard Operating Procedure:
-                                      documented steps for carrying out
-                                      an operational process
-                                      consistently.
-  -----------------------------------------------------------------------
+| Term | Meaning |
+|---|---|
+| Identity | A representation of a person or other entity whose access is managed. |
+| Account | A user's account within a particular application or system. |
+| Entitlement | A specific permission or access right within a system. |
+| Provisioning | Creating an account or assigning access. |
+| Deprovisioning | Removing an account or access. |
+| Access certification | A formal review of existing access to determine whether it should remain. |
+| Policy violation | A condition in which access conflicts with an established organizational policy. |
+| Target application | An application or system to which IdentityIQ manages or governs access. |
+| RBAC | Role-Based Access Control: access is assigned through defined roles. |
+| ABAC | Attribute-Based Access Control: access decisions use defined attributes and conditions. |
+| SoD | Segregation of Duties: a control principle that prevents conflicting responsibilities from being assigned to the same person. |
+| Exception | A formally reviewed and authorized deviation from a defined policy or control requirement. |
+| Compensating control | An alternative control used to reduce risk when the standard control cannot be followed. |
+| SOP | Standard Operating Procedure: documented steps for carrying out an operational process consistently. |
 
 ------------------------------------------------------------------------
 
@@ -794,35 +674,15 @@ repository](https://github.com/Alisha-chaudhary/IdentityGuard/tree/main/IAM-Gove
 
 The pack contains the following training-reference documents:
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Reference document                                                                                                                                                      What readers can learn from it
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------
-  [Access Control                                                                                                                                                         How an organization defines
-  Policy](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/01-Access-Control-Policy.docx)                access-control principles,
-                                                                                                                                                                          responsibilities, and requirements.
-
-  [RBAC Matrix](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/02-RBAC-Matrix.xlsx)                    How business roles are mapped to
-                                                                                                                                                                          application access.
-
-  [Entitlement                                                                                                                                                            How application permissions are
-  Catalogue](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/03-Entitlement-Catalogue.xlsx)             inventoried and described.
-
-  [Approval Matrix](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/04-Approval-Matrix.xlsx)            How approval responsibilities can
-                                                                                                                                                                          be assigned to different access
-                                                                                                                                                                          requests.
-
-  [SoD Policy and Rules                                                                                                                                                   How conflicting responsibilities
-  Register](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/05-SoD-Policy-and-Rules-Register.docx)      and access combinations can be
-                                                                                                                                                                          documented.
-
-  [Provisioning and Deprovisioning                                                                                                                                        How access fulfilment,
-  SOP](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/02-Operational-Procedures/06-Provisioning-and-Deprovisioning-SOP.docx)   verification, evidence, and closure
-                                                                                                                                                                          can be handled consistently.
-
-  [Exception Management                                                                                                                                                   How failed requests, policy
-  SOP](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/02-Operational-Procedures/07-Exception-Management-SOP.docx)              exceptions, escalation, and
-                                                                                                                                                                          remediation can be managed.
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Reference document | What readers can learn from it |
+|---|---|
+| [Access Control Policy](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/01-Access-Control-Policy.docx) | How an organization defines access-control principles, responsibilities, and requirements. |
+| [RBAC Matrix](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/02-RBAC-Matrix.xlsx) | How business roles are mapped to application access. |
+| [Entitlement Catalogue](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/03-Entitlement-Catalogue.xlsx) | How application permissions are inventoried and described. |
+| [Approval Matrix](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/04-Approval-Matrix.xlsx) | How approval responsibilities can be assigned to different access requests. |
+| [SoD Policy and Rules Register](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/01-Governance-Framework/05-SoD-Policy-and-Rules-Register.docx) | How conflicting responsibilities and access combinations can be documented. |
+| [Provisioning and Deprovisioning SOP](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/02-Operational-Procedures/06-Provisioning-and-Deprovisioning-SOP.docx) | How access fulfilment, verification, evidence, and closure can be handled consistently. |
+| [Exception Management SOP](https://github.com/Alisha-chaudhary/IdentityGuard/blob/main/IAM-Governance-and-Operations/02-Operational-Procedures/07-Exception-Management-SOP.docx) | How failed requests, policy exceptions, escalation, and remediation can be managed. |
 
 ### Understanding the training examples
 
@@ -842,6 +702,10 @@ The documents do not represent an automatic IdentityIQ integration. They
 illustrate the organizational inputs that an IAM team would need to
 assess before configuring a platform such as IdentityIQ.
 
+IdentityGuard is a self-created learning project, not a commercial IAM
+product. The linked documents are not official IdentityIQ implementation
+requirements.
+
 **Scope note:** The listed document set includes an RBAC Matrix but does
 not include a separate ABAC matrix. ABAC is discussed in this chapter as
 a related access-control model, not as a document in the linked pack.
@@ -849,4 +713,3 @@ a related access-control model, not as a document in the linked pack.
 **Diagram note:** The diagrams in this chapter are conceptual learning
 illustrations. They are not screenshots, product architecture diagrams,
 or claims about a universal production workflow.
-

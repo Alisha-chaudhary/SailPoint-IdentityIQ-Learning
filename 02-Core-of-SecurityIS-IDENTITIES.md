@@ -1,4 +1,4 @@
-# SailPoint IdentityIQ: Chapter 2, Topic 4 — Identities
+# SailPoint IdentityIQ: Chapter 2 - Identities
 
 > A practical learning guide to SailPoint IdentityIQ (IIQ), Identity
 > Governance and Administration (IGA), and the identity concepts that
